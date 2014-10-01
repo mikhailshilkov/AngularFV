@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QESE.QFV.TPI" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QESE.QFV.TPI" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+  <xs:complexType name="Vehicle">
+    <xs:complexContent mixed="false">
+      <xs:extension xmlns:q1="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" base="q1:Vehicle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Vehicle" nillable="true" type="tns:Vehicle" />
+</xs:schema>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="QESE.QFV.UI.Services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="QESE.QFV.UI.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="QESE.QFV.UI.Services/Imports">
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd0" namespace="QESE.QFV.UI.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Maps" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Provisioning" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AssetSettings" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.DeliveryStatus" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.TPI" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Forms" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/QESE.Logging" />
+      <xsd:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd13" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMessageService_GetMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetNewMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetNewMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessagesPaged_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesPaged" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessagesPaged_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessagesPagedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetRead_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetRead" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetRead_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReadResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetReadMany_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetReadMany" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetReadMany_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetReadManyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessageCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCount" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessageCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetFormInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormInstance" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetFormInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessageText_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageText" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetMessageText_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetMessageTextResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_AddMessageComment_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddMessageComment" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_AddMessageComment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddMessageCommentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_UpdateMessageCommentStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageCommentStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_UpdateMessageCommentStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMessageCommentStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetNewCommentsCount_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewCommentsCount" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetNewCommentsCount_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNewCommentsCountResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatus" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SetStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SetStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendTrailerStatusRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTrailerStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendTrailerStatusRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTrailerStatusRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendTrailerParams_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendTrailerParams" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendTrailerParams_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendTrailerParamsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetRelatedMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetRelatedMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRelatedMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_ResendMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResendMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_ResendMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_CreateMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_CreateMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_CheckMTFormMapping_InputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMTFormMapping" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_CheckMTFormMapping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CheckMTFormMappingResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_UpdateMTMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMTMessage" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_UpdateMTMessage_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateMTMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendMacroDefinition_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendMacroDefinition" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendMacroDefinition_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendMacroDefinitionResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendConfigStatusRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendConfigStatusRequest" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendConfigStatusRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendConfigStatusRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendConfigServiceEnableRequest_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendConfigServiceEnableRequest" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_SendConfigServiceEnableRequest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendConfigServiceEnableRequestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetFormDefinitionMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormDefinitionMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetFormDefinitionMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetFormDefinitionMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_DeleteMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_DeleteMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetWorkflowMessages_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkflowMessages" />
+  </wsdl:message>
+  <wsdl:message name="IMessageService_GetWorkflowMessages_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetWorkflowMessagesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IMessageService">
+    <wsdl:operation name="GetMessage">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessage" message="tns:IMessageService_GetMessage_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessageResponse" message="tns:IMessageService_GetMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessages" message="tns:IMessageService_GetMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessagesResponse" message="tns:IMessageService_GetMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetNewMessages" message="tns:IMessageService_GetNewMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetNewMessagesResponse" message="tns:IMessageService_GetNewMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessagesPaged">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessagesPaged" message="tns:IMessageService_GetMessagesPaged_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessagesPagedResponse" message="tns:IMessageService_GetMessagesPaged_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetRead">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetRead" message="tns:IMessageService_SetRead_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetReadResponse" message="tns:IMessageService_SetRead_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetReadMany">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetReadMany" message="tns:IMessageService_SetReadMany_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetReadManyResponse" message="tns:IMessageService_SetReadMany_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageCount">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessageCount" message="tns:IMessageService_GetMessageCount_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessageCountResponse" message="tns:IMessageService_GetMessageCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormInstance">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetFormInstance" message="tns:IMessageService_GetFormInstance_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetFormInstanceResponse" message="tns:IMessageService_GetFormInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessageText">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessageText" message="tns:IMessageService_GetMessageText_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetMessageTextResponse" message="tns:IMessageService_GetMessageText_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddMessageComment">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/AddMessageComment" message="tns:IMessageService_AddMessageComment_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/AddMessageCommentResponse" message="tns:IMessageService_AddMessageComment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMessageCommentStatus">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/UpdateMessageCommentStatus" message="tns:IMessageService_UpdateMessageCommentStatus_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/UpdateMessageCommentStatusResponse" message="tns:IMessageService_UpdateMessageCommentStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetNewCommentsCount">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetNewCommentsCount" message="tns:IMessageService_GetNewCommentsCount_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetNewCommentsCountResponse" message="tns:IMessageService_GetNewCommentsCount_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SetStatus">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetStatus" message="tns:IMessageService_SetStatus_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SetStatusResponse" message="tns:IMessageService_SetStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTrailerStatusRequest">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendTrailerStatusRequest" message="tns:IMessageService_SendTrailerStatusRequest_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendTrailerStatusRequestResponse" message="tns:IMessageService_SendTrailerStatusRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendTrailerParams">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendTrailerParams" message="tns:IMessageService_SendTrailerParams_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendTrailerParamsResponse" message="tns:IMessageService_SendTrailerParams_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRelatedMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetRelatedMessages" message="tns:IMessageService_GetRelatedMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetRelatedMessagesResponse" message="tns:IMessageService_GetRelatedMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendMessage" message="tns:IMessageService_SendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendMessageResponse" message="tns:IMessageService_SendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResendMessage">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/ResendMessage" message="tns:IMessageService_ResendMessage_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/ResendMessageResponse" message="tns:IMessageService_ResendMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateMessage">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/CreateMessage" message="tns:IMessageService_CreateMessage_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/CreateMessageResponse" message="tns:IMessageService_CreateMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckMTFormMapping">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/CheckMTFormMapping" message="tns:IMessageService_CheckMTFormMapping_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/CheckMTFormMappingResponse" message="tns:IMessageService_CheckMTFormMapping_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateMTMessage">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/UpdateMTMessage" message="tns:IMessageService_UpdateMTMessage_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/UpdateMTMessageResponse" message="tns:IMessageService_UpdateMTMessage_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMacroDefinition">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendMacroDefinition" message="tns:IMessageService_SendMacroDefinition_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendMacroDefinitionResponse" message="tns:IMessageService_SendMacroDefinition_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendConfigStatusRequest">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendConfigStatusRequest" message="tns:IMessageService_SendConfigStatusRequest_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendConfigStatusRequestResponse" message="tns:IMessageService_SendConfigStatusRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendConfigServiceEnableRequest">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendConfigServiceEnableRequest" message="tns:IMessageService_SendConfigServiceEnableRequest_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/SendConfigServiceEnableRequestResponse" message="tns:IMessageService_SendConfigServiceEnableRequest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFormDefinitionMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetFormDefinitionMessages" message="tns:IMessageService_GetFormDefinitionMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetFormDefinitionMessagesResponse" message="tns:IMessageService_GetFormDefinitionMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/DeleteMessages" message="tns:IMessageService_DeleteMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/DeleteMessagesResponse" message="tns:IMessageService_DeleteMessages_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetWorkflowMessages">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetWorkflowMessages" message="tns:IMessageService_GetWorkflowMessages_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IMessageService/GetWorkflowMessagesResponse" message="tns:IMessageService_GetWorkflowMessages_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

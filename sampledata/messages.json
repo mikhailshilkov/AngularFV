@@ -1,0 +1,16 @@
+[
+  { 
+    "who": "467190002790114",
+    "text": "Fuel filled: 132L (KM=161710)",
+    "date": "13/09/2013",
+    "where": "7.2  ESE  Tatabanya",
+    "status": "unread"
+  }, 
+  { 
+    "who": "467190002232083",
+    "text": "Fuel drained: 93L (KM=740872)",
+    "date": "13/09/2013",
+    "where": "5.9  ESE  Calais",
+    "status": "read"
+  }
+]

@@ -1,0 +1,30 @@
+﻿<div class="new">
+    <div class="recepient">
+        <table>
+            <tr>
+                <td><label>Recepient</label></td>
+                <td><div class="input" contenteditable="true" ng-model="recepient" focus-me="focused"></div></td>
+            </tr>
+        </table>
+    </div>
+    <div class="body">
+        <div class="input" contenteditable="true" ng-model="text">
+        </div>
+    </div>
+    <div class="buttons">
+        <table>
+            <tr>
+                <td>
+                    <div class="button blue" ng-click="sendMessage()">
+                        Send
+                    </div>
+                </td>
+                <td>
+                    <div class="button gray" ng-click="hideDialog()">
+                        Cancel
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

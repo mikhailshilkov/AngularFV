@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="QESE.QFV.UI.Services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="QESE.QFV.UI.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="QESE.QFV.UI.Services/Imports">
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd13" namespace="QESE.QFV.UI.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd0" namespace="QESE.QFV.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Maps" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Provisioning" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AssetSettings" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.DeliveryStatus" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.TPI" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/QESE.Logging" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IRoutePlanningService_CreateRouteFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRouteFolder" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_CreateRouteFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRouteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRouteFolders_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteFolders" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRouteFolders_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteFoldersResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRouteFoldersWithRoutes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteFoldersWithRoutes" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRouteFoldersWithRoutes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteFoldersWithRoutesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoute" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_UpdateFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolder" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_UpdateFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_DeleteRouteFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRouteFolder" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_DeleteRouteFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRouteFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRoutesForFolder_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutesForFolder" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_GetRoutesForFolder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetRoutesForFolderResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_CreateRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRoute" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_CreateRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:CreateRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_UpdateRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRoute" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_UpdateRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_DeleteRoute_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRoute" />
+  </wsdl:message>
+  <wsdl:message name="IRoutePlanningService_DeleteRoute_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteRouteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertTypes_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertTypes" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertTypes_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertTypesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertDefinitions_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertDefinitions" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertDefinitions_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertDefinitionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_SaveTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_SaveTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveTriggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_DeleteTrigger_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTrigger" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_DeleteTrigger_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteTriggerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertSummary_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertSummary" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlertSummary_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertSummaryResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlerts_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlerts" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_GetAlerts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAlertsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_AcknowledgeAlert_InputMessage">
+    <wsdl:part name="parameters" element="tns:AcknowledgeAlert" />
+  </wsdl:message>
+  <wsdl:message name="IAlertManagerService_AcknowledgeAlert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AcknowledgeAlertResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationService_GetNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotifications" />
+  </wsdl:message>
+  <wsdl:message name="INotificationService_GetNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:message name="INotificationService_DeleteNotifications_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotifications" />
+  </wsdl:message>
+  <wsdl:message name="INotificationService_DeleteNotifications_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteNotificationsResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IRoutePlanningService">
+    <wsdl:operation name="CreateRouteFolder">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/CreateRouteFolder" message="tns:IRoutePlanningService_CreateRouteFolder_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/CreateRouteFolderResponse" message="tns:IRoutePlanningService_CreateRouteFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteFolders">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRouteFolders" message="tns:IRoutePlanningService_GetRouteFolders_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRouteFoldersResponse" message="tns:IRoutePlanningService_GetRouteFolders_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRouteFoldersWithRoutes">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRouteFoldersWithRoutes" message="tns:IRoutePlanningService_GetRouteFoldersWithRoutes_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRouteFoldersWithRoutesResponse" message="tns:IRoutePlanningService_GetRouteFoldersWithRoutes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoute">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRoute" message="tns:IRoutePlanningService_GetRoute_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRouteResponse" message="tns:IRoutePlanningService_GetRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateFolder">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/UpdateFolder" message="tns:IRoutePlanningService_UpdateFolder_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/UpdateFolderResponse" message="tns:IRoutePlanningService_UpdateFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRouteFolder">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/DeleteRouteFolder" message="tns:IRoutePlanningService_DeleteRouteFolder_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/DeleteRouteFolderResponse" message="tns:IRoutePlanningService_DeleteRouteFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetRoutesForFolder">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRoutesForFolder" message="tns:IRoutePlanningService_GetRoutesForFolder_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/GetRoutesForFolderResponse" message="tns:IRoutePlanningService_GetRoutesForFolder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="CreateRoute">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/CreateRoute" message="tns:IRoutePlanningService_CreateRoute_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/CreateRouteResponse" message="tns:IRoutePlanningService_CreateRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateRoute">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/UpdateRoute" message="tns:IRoutePlanningService_UpdateRoute_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/UpdateRouteResponse" message="tns:IRoutePlanningService_UpdateRoute_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteRoute">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/DeleteRoute" message="tns:IRoutePlanningService_DeleteRoute_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IRoutePlanningService/DeleteRouteResponse" message="tns:IRoutePlanningService_DeleteRoute_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="IAlertManagerService">
+    <wsdl:operation name="GetAlertTypes">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertTypes" message="tns:IAlertManagerService_GetAlertTypes_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertTypesResponse" message="tns:IAlertManagerService_GetAlertTypes_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertDefinitions">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertDefinitions" message="tns:IAlertManagerService_GetAlertDefinitions_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertDefinitionsResponse" message="tns:IAlertManagerService_GetAlertDefinitions_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveTrigger">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/SaveTrigger" message="tns:IAlertManagerService_SaveTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/SaveTriggerResponse" message="tns:IAlertManagerService_SaveTrigger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTrigger">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/DeleteTrigger" message="tns:IAlertManagerService_DeleteTrigger_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/DeleteTriggerResponse" message="tns:IAlertManagerService_DeleteTrigger_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlertSummary">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertSummary" message="tns:IAlertManagerService_GetAlertSummary_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertSummaryResponse" message="tns:IAlertManagerService_GetAlertSummary_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAlerts">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlerts" message="tns:IAlertManagerService_GetAlerts_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/GetAlertsResponse" message="tns:IAlertManagerService_GetAlerts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AcknowledgeAlert">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/AcknowledgeAlert" message="tns:IAlertManagerService_AcknowledgeAlert_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/IAlertManagerService/AcknowledgeAlertResponse" message="tns:IAlertManagerService_AcknowledgeAlert_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="INotificationService">
+    <wsdl:operation name="GetNotifications">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/INotificationService/GetNotifications" message="tns:INotificationService_GetNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/INotificationService/GetNotificationsResponse" message="tns:INotificationService_GetNotifications_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteNotifications">
+      <wsdl:input wsaw:Action="QESE.QFV.UI.Services/INotificationService/DeleteNotifications" message="tns:INotificationService_DeleteNotifications_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.UI.Services/INotificationService/DeleteNotificationsResponse" message="tns:INotificationService_DeleteNotifications_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="QESE.QFV.Services" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="QESE.QFV.Services" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="QESE.QFV.Services/Imports">
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd0" namespace="QESE.QFV.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Maps" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd5" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Provisioning" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd6" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AssetSettings" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.DeliveryStatus" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd8" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.TPI" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/QESE.Logging" />
+      <xsd:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICommonService_GetCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCID_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCID" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCID_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCountryDetails_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryDetails" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCountryDetails_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCountryDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomerCareCustomers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCareCustomers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomerCareCustomers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerCareCustomersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomerDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDevices" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCustomerDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetVehicles_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicles" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetVehicles_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehiclesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevices" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCIDs_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIDs" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetCIDs_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCIDsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDevice_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDevice" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDevice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDeviceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetVehicleIdByMSISDN_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleIdByMSISDN" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetVehicleIdByMSISDN_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetVehicleIdByMSISDNResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveCustomerPreferences_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerPreferences" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveCustomerPreferences_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerPreferencesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveCustomerServices_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerServices" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveCustomerServices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveCustomerServicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssets" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_FindAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssets" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_FindAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveAssetGroup_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAssetGroup" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveAssetGroup_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveAssetGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveUserAssetGroups_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUserAssetGroups" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveUserAssetGroups_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveUserAssetGroupsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_UploadParameterSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:UploadParameterSet" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_UploadParameterSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UploadParameterSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ListParameterSets_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListParameterSets" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ListParameterSets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListParameterSetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveParameterSet_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveParameterSet" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveParameterSet_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveParameterSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveParameterSetInstances_InputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveParameterSetInstances" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_RetrieveParameterSetInstances_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RetrieveParameterSetInstancesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveParameterSetInstance_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveParameterSetInstance" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveParameterSetInstance_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveParameterSetInstanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDepots_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepots" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetDepots_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetDepotsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_LoadFilters_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadFilters" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_LoadFilters_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadFiltersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFilter" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_DeleteFilter_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilter" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_DeleteFilter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteFilterResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserDrivers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDrivers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserDrivers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserDriversResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserTrailers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTrailers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserTrailers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTrailersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserTrailerDevices_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTrailerDevices" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserTrailerDevices_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserTrailerDevicesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SendEmail_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmail" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SendEmail_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendEmailResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SendSMS_InputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMS" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SendSMS_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SendSMSResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetAssetsWithAssignments_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsWithAssignments" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetAssetsWithAssignments_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAssetsWithAssignmentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_UserActivityInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:UserActivityInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_UserActivityInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UserActivityInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserActivities_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserActivities" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetUserActivities_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetUserActivitiesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_TPIActivityInsert_InputMessage">
+    <wsdl:part name="parameters" element="tns:TPIActivityInsert" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_TPIActivityInsert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:TPIActivityInsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ResolveIdentifiers_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveIdentifiers" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ResolveIdentifiers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveIdentifiersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ResolveIdentifier_InputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveIdentifier" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ResolveIdentifier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ResolveIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_AddExternalIdentifier_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddExternalIdentifier" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_AddExternalIdentifier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddExternalIdentifierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_FindAssetOwners_InputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssetOwners" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_FindAssetOwners_OutputMessage">
+    <wsdl:part name="parameters" element="tns:FindAssetOwnersResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_EnsureAssets_InputMessage">
+    <wsdl:part name="parameters" element="tns:EnsureAssets" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_EnsureAssets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EnsureAssetsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveProfilingSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfilingSession" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_SaveProfilingSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaveProfilingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_LoadProfilingSession_InputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProfilingSession" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_LoadProfilingSession_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoadProfilingSessionResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ChangeLogHasUpdates_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeLogHasUpdates" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_ChangeLogHasUpdates_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeLogHasUpdatesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetChangeLog_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangeLog" />
+  </wsdl:message>
+  <wsdl:message name="ICommonService_GetChangeLog_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetChangeLogResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICommonService">
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomer" message="tns:ICommonService_GetCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomerResponse" message="tns:ICommonService_GetCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCID">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCID" message="tns:ICommonService_GetCID_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCIDResponse" message="tns:ICommonService_GetCID_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCountryDetails">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCountryDetails" message="tns:ICommonService_GetCountryDetails_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCountryDetailsResponse" message="tns:ICommonService_GetCountryDetails_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomers">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomers" message="tns:ICommonService_GetCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomersResponse" message="tns:ICommonService_GetCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerCareCustomers">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomerCareCustomers" message="tns:ICommonService_GetCustomerCareCustomers_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomerCareCustomersResponse" message="tns:ICommonService_GetCustomerCareCustomers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerDevices">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomerDevices" message="tns:ICommonService_GetCustomerDevices_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCustomerDevicesResponse" message="tns:ICommonService_GetCustomerDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicles">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetVehicles" message="tns:ICommonService_GetVehicles_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetVehiclesResponse" message="tns:ICommonService_GetVehicles_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevices">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetDevices" message="tns:ICommonService_GetDevices_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetDevicesResponse" message="tns:ICommonService_GetDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCIDs">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetCIDs" message="tns:ICommonService_GetCIDs_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetCIDsResponse" message="tns:ICommonService_GetCIDs_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDevice">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetDevice" message="tns:ICommonService_GetDevice_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetDeviceResponse" message="tns:ICommonService_GetDevice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetVehicleIdByMSISDN">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetVehicleIdByMSISDN" message="tns:ICommonService_GetVehicleIdByMSISDN_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetVehicleIdByMSISDNResponse" message="tns:ICommonService_GetVehicleIdByMSISDN_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerPreferences">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SaveCustomerPreferences" message="tns:ICommonService_SaveCustomerPreferences_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SaveCustomerPreferencesResponse" message="tns:ICommonService_SaveCustomerPreferences_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveCustomerServices">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SaveCustomerServices" message="tns:ICommonService_SaveCustomerServices_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SaveCustomerServicesResponse" message="tns:ICommonService_SaveCustomerServices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssets">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetAssets" message="tns:ICommonService_GetAssets_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetAssetsResponse" message="tns:ICommonService_GetAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAssets">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/FindAssets" message="tns:ICommonService_FindAssets_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/FindAssetsResponse" message="tns:ICommonService_FindAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveAssetGroup">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveAssetGroup" message="tns:ICommonService_RetrieveAssetGroup_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveAssetGroupResponse" message="tns:ICommonService_RetrieveAssetGroup_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveUserAssetGroups">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveUserAssetGroups" message="tns:ICommonService_RetrieveUserAssetGroups_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveUserAssetGroupsResponse" message="tns:ICommonService_RetrieveUserAssetGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UploadParameterSet">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/UploadParameterSet" message="tns:ICommonService_UploadParameterSet_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/UploadParameterSetResponse" message="tns:ICommonService_UploadParameterSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListParameterSets">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/ListParameterSets" message="tns:ICommonService_ListParameterSets_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/ListParameterSetsResponse" message="tns:ICommonService_ListParameterSets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveParameterSet">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveParameterSet" message="tns:ICommonService_RetrieveParameterSet_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveParameterSetResponse" message="tns:ICommonService_RetrieveParameterSet_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RetrieveParameterSetInstances">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveParameterSetInstances" message="tns:ICommonService_RetrieveParameterSetInstances_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/RetrieveParameterSetInstancesResponse" message="tns:ICommonService_RetrieveParameterSetInstances_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveParameterSetInstance">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SaveParameterSetInstance" message="tns:ICommonService_SaveParameterSetInstance_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SaveParameterSetInstanceResponse" message="tns:ICommonService_SaveParameterSetInstance_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetDepots">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetDepots" message="tns:ICommonService_GetDepots_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetDepotsResponse" message="tns:ICommonService_GetDepots_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadFilters">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/LoadFilters" message="tns:ICommonService_LoadFilters_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/LoadFiltersResponse" message="tns:ICommonService_LoadFilters_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveFilter">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SaveFilter" message="tns:ICommonService_SaveFilter_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SaveFilterResponse" message="tns:ICommonService_SaveFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFilter">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/DeleteFilter" message="tns:ICommonService_DeleteFilter_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/DeleteFilterResponse" message="tns:ICommonService_DeleteFilter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserDrivers">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetUserDrivers" message="tns:ICommonService_GetUserDrivers_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetUserDriversResponse" message="tns:ICommonService_GetUserDrivers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrailers">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetUserTrailers" message="tns:ICommonService_GetUserTrailers_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetUserTrailersResponse" message="tns:ICommonService_GetUserTrailers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserTrailerDevices">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetUserTrailerDevices" message="tns:ICommonService_GetUserTrailerDevices_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetUserTrailerDevicesResponse" message="tns:ICommonService_GetUserTrailerDevices_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendEmail">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SendEmail" message="tns:ICommonService_SendEmail_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SendEmailResponse" message="tns:ICommonService_SendEmail_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SendSMS">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SendSMS" message="tns:ICommonService_SendSMS_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SendSMSResponse" message="tns:ICommonService_SendSMS_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAssetsWithAssignments">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetAssetsWithAssignments" message="tns:ICommonService_GetAssetsWithAssignments_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetAssetsWithAssignmentsResponse" message="tns:ICommonService_GetAssetsWithAssignments_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UserActivityInsert">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/UserActivityInsert" message="tns:ICommonService_UserActivityInsert_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/UserActivityInsertResponse" message="tns:ICommonService_UserActivityInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetUserActivities">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetUserActivities" message="tns:ICommonService_GetUserActivities_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetUserActivitiesResponse" message="tns:ICommonService_GetUserActivities_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="TPIActivityInsert">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/TPIActivityInsert" message="tns:ICommonService_TPIActivityInsert_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/TPIActivityInsertResponse" message="tns:ICommonService_TPIActivityInsert_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveIdentifiers">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/ResolveIdentifiers" message="tns:ICommonService_ResolveIdentifiers_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/ResolveIdentifiersResponse" message="tns:ICommonService_ResolveIdentifiers_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ResolveIdentifier">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/ResolveIdentifier" message="tns:ICommonService_ResolveIdentifier_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/ResolveIdentifierResponse" message="tns:ICommonService_ResolveIdentifier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddExternalIdentifier">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/AddExternalIdentifier" message="tns:ICommonService_AddExternalIdentifier_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/AddExternalIdentifierResponse" message="tns:ICommonService_AddExternalIdentifier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="FindAssetOwners">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/FindAssetOwners" message="tns:ICommonService_FindAssetOwners_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/FindAssetOwnersResponse" message="tns:ICommonService_FindAssetOwners_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EnsureAssets">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/EnsureAssets" message="tns:ICommonService_EnsureAssets_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/EnsureAssetsResponse" message="tns:ICommonService_EnsureAssets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="SaveProfilingSession">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/SaveProfilingSession" message="tns:ICommonService_SaveProfilingSession_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/SaveProfilingSessionResponse" message="tns:ICommonService_SaveProfilingSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="LoadProfilingSession">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/LoadProfilingSession" message="tns:ICommonService_LoadProfilingSession_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/LoadProfilingSessionResponse" message="tns:ICommonService_LoadProfilingSession_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeLogHasUpdates">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/ChangeLogHasUpdates" message="tns:ICommonService_ChangeLogHasUpdates_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/ChangeLogHasUpdatesResponse" message="tns:ICommonService_ChangeLogHasUpdates_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetChangeLog">
+      <wsdl:input wsaw:Action="QESE.QFV.Services/ICommonService/GetChangeLog" message="tns:ICommonService_GetChangeLog_InputMessage" />
+      <wsdl:output wsaw:Action="QESE.QFV.Services/ICommonService/GetChangeLogResponse" message="tns:ICommonService_GetChangeLog_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

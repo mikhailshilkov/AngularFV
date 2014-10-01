@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="QESE.QFV.UI.Services" elementFormDefault="qualified" targetNamespace="QESE.QFV.UI.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd12" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd14" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+  <xs:element name="CreateRouteFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="routeFolder" nillable="true" type="q1:RouteFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRouteFolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateRouteFolderResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteFolders">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteFoldersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="GetRouteFoldersResult" nillable="true" type="q2:ArrayOfRouteFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteFoldersWithRoutes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="includeRouteDetails" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteFoldersWithRoutesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="GetRouteFoldersWithRoutesResult" nillable="true" type="q3:ArrayOfRouteFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="routeId" type="xs:int" />
+        <xs:element minOccurs="0" name="includeDetails" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="GetRouteResult" nillable="true" type="q4:Route" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="routeFolder" nillable="true" type="q5:RouteFolder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateFolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateFolderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRouteFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="routeFolderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRouteFolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRouteFolderResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutesForFolder">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="routeFolderId" type="xs:int" />
+        <xs:element minOccurs="0" name="includeRouteDetails" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRoutesForFolderResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="GetRoutesForFolderResult" nillable="true" type="q6:Routes" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="route" nillable="true" type="q7:Route" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateRouteResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.RoutePlanning" minOccurs="0" name="route" nillable="true" type="q8:Route" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateRouteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRoute">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="routeId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteRouteResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteRouteResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertTypes">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertTypesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="GetAlertTypesResult" nillable="true" type="q9:ArrayOfAlertType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertDefinitions">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertDefinitionsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="GetAlertDefinitionsResult" nillable="true" type="q10:AlertTriggers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTrigger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="trigger" nillable="true" type="q11:AlertTrigger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveTriggerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="SaveTriggerResult" nillable="true" type="q12:AlertTrigger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTrigger">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="trigger" nillable="true" type="q13:AlertTrigger" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteTriggerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteTriggerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertSummary">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertSummaryResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="GetAlertSummaryResult" nillable="true" type="q14:AlertSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlerts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="handledStates" type="q15:AlertHandledState" />
+        <xs:element minOccurs="0" name="lastFetched" nillable="true" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAlertsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="GetAlertsResult" nillable="true" type="q16:ArrayOfAlert" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcknowledgeAlert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AlertManager" minOccurs="0" name="alert" nillable="true" type="q17:Alert" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AcknowledgeAlertResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AcknowledgeAlertResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q18:GetNotificationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNotificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="GetNotificationsResult" nillable="true" type="q19:GetNotificationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotifications">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q20:GetNotificationsRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteNotificationsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="DeleteNotificationsResult" nillable="true" type="q21:GetNotificationsResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="QESE.QFV.UI.Services" elementFormDefault="qualified" targetNamespace="QESE.QFV.UI.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd13" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd9" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Forms" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:element name="GetMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserMsgID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetMessageResult" nillable="true" type="q1:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q2:GetMessagesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="GetMessagesResult" nillable="true" type="q3:GetMessagesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q4:GetMessagesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="GetNewMessagesResult" nillable="true" type="q5:GetMessagesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessagesPaged">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q6:GetMessagesPagedRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessagesPagedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="GetMessagesPagedResult" nillable="true" type="q7:GetMessagesResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetRead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserMsgID" type="xs:long" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="markAsRead" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReadResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetReadResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReadMany">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q8="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="userMsgIDs" nillable="true" type="q8:ArrayOflong" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="markAsRead" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetReadManyResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetReadManyResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q9:GetMessageCountRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="GetMessageCountResult" nillable="true" type="q10:GetMessageCountResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFormInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="messageId" type="xs:long" />
+        <xs:element minOccurs="0" name="TZO" type="xs:short" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFormInstanceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Forms" minOccurs="0" name="GetFormInstanceResult" nillable="true" type="q11:FormInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageText">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="messageId" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetMessageTextResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetMessageTextResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMessageComment">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element minOccurs="0" name="userMsgID" type="xs:long" />
+        <xs:element minOccurs="0" name="userNameFrom" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userNameTo" nillable="true" type="xs:string" />
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="creationTime" type="q12:DateTimeOffset" />
+        <xs:element minOccurs="0" name="comment" nillable="true" type="xs:string" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="status" type="q13:MessageCommentStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddMessageCommentResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="AddMessageCommentResult" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMessageCommentStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element minOccurs="0" name="id" type="xs:long" />
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="status" type="q14:MessageCommentStatus" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="timeStamp" type="q15:DateTimeOffset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMessageCommentStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMessageCommentStatusResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewCommentsCount">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="cid" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="since" nillable="true" type="q16:DateTimeOffset" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="status" type="q17:MessageCommentStatus" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetNewCommentsCountResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetNewCommentsCountResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserMsgID" type="xs:long" />
+        <xs:element minOccurs="0" name="status" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SetStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SetStatusResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTrailerStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TrailerID" type="xs:int" />
+        <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTrailerStatusRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendTrailerStatusRequestResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTrailerParams">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="TrailerID" type="xs:int" />
+        <xs:element minOccurs="0" name="Params" type="xs:int" />
+        <xs:element minOccurs="0" name="User" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendTrailerParamsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendTrailerParamsResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userMsgID" type="xs:long" />
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="messageClass" type="q18:MsgClass" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetRelatedMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetRelatedMessagesResult" nillable="true" type="q19:ArrayOfMessage" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q20:SendMessageRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q21="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SendMessageResult" nillable="true" type="q21:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userMsgID" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResendMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResendMessageResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="message" nillable="true" type="q22:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CreateMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CreateMessageResult" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMTFormMapping">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="deviceType" type="q23:DeviceType" />
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="formClass" type="q24:MsgClass" />
+        <xs:element minOccurs="0" name="formNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="formVersion" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="CheckMTFormMappingResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Forms" minOccurs="0" name="CheckMTFormMappingResult" nillable="true" type="q25:Form" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMTMessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="message" nillable="true" type="q26:Message" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UpdateMTMessageResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="UpdateMTMessageResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMacroDefinition">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q27:SendMacroDefinitionRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendMacroDefinitionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SendMacroDefinitionResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConfigStatusRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="request" nillable="true" type="q28:SendConfigStatusRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConfigStatusRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q29="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SendConfigStatusRequestResult" nillable="true" type="q29:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConfigServiceEnableRequest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="request" nillable="true" type="q30:SendConfigServiceEnableRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendConfigServiceEnableRequestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="SendConfigServiceEnableRequestResult" nillable="true" type="q31:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFormDefinitionMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="From" nillable="true" type="q32:DateTimeOffset" />
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="Until" nillable="true" type="q33:DateTimeOffset" />
+        <xs:element minOccurs="0" name="AssetSelection" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="MTStatus" type="xs:int" />
+        <xs:element minOccurs="0" name="Author" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserMsgID" nillable="true" type="xs:long" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetFormDefinitionMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetFormDefinitionMessagesResult" nillable="true" type="q34:Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q35="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="UserMsgIDs" nillable="true" type="q35:ArrayOflong" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="DeleteMessagesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkflowMessages">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q36="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="jobGuid" type="q36:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetWorkflowMessagesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetWorkflowMessagesResult" nillable="true" type="q37:Messages" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

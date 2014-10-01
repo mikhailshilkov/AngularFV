@@ -1,0 +1,60 @@
+<table>
+    <tr>
+        <td>
+            <h3>Messages</h3>
+        </td>
+        <td>
+            <div>
+                <div class="search">
+                    <input type="text" ng-model="searchTerm" ng-enter="retrieveMessages()" />
+                </div>                
+            </div>
+        </td>
+        <td><button class="searchbutton" ng-click="retrieveMessages()"><div>&nbsp;</div></button></td>
+    </tr>
+</table>
+<div class="sidebar">
+    <div class="button" ng-click="newMessage = true; focusNewMessage = true">
+        New Message
+    </div>
+    <div ng-click="selectedFolder = 'inbox'; retrieveMessages();" class="folder {{selectedFolder == 'inbox' ? 'selected' : ''}}">
+        <div class="{{newCount > 0 ? 'bold' : ''}}">
+            Inbox ({{newCount}})
+        </div>
+    </div>
+    <div ng-click="selectedFolder = 'sent'; retrieveMessages();" class="folder {{selectedFolder == 'sent' ? 'selected' : ''}}">
+        Sent Items
+    </div>
+    <div>
+        <div data-angular-treeview="true"
+             data-tree-id="tree"
+             data-tree-model="assetGroups"
+             data-node-id="id"
+             data-node-label="name"
+             data-node-children="children">
+        </div>
+    </div>
+</div>
+<div class="gridbody">
+    <div ng-show="newMessage">
+        <fv-new-message focused="focusNewMessage">
+        </fv-new-message>
+    </div>
+
+    <div class="grid" ng-show="messages" ng-arrow-down="selectNext()" ng-arrow-up="selectPrevious()" tabindex="1">
+        <table class="messages">
+            <tr ng-repeat="message in messages" class="{{message.status}} {{selectedMessage == message ? 'selected' : ''}}" ng-click="selectMessage(message)">
+                <td class="who">{{message.who}}</td>
+                <td class="text">{{message.text}}</td>
+                <td class="date">{{message.date}}</td>
+                <td class="where">{{message.poi}}</td>
+            </tr>
+        </table>
+    </div>
+    <fv-message-preview message="selectedMessage" ng-show="messages">
+    </fv-message-preview>
+
+    <div ng-hide="messages">
+        There is no messages in this view
+    </div>
+</div>

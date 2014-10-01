@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Provisioning" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.Provisioning" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:simpleType name="ProvisioningStatus">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="Unknown" />
+      <xs:enumeration value="New" />
+      <xs:enumeration value="Pending" />
+      <xs:enumeration value="Success" />
+      <xs:enumeration value="Error" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="ProvisioningStatus" nillable="true" type="tns:ProvisioningStatus" />
+</xs:schema>

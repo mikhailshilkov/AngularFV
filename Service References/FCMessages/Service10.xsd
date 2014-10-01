@@ -1,0 +1,419 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AssetSettings" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.AssetSettings" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:import schemaLocation="http://localhost/wsFCMessages/Service.svc?xsd=xsd7" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.DeliveryStatus" />
+  <xs:complexType name="DeviceSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DeviceSetting" nillable="true" type="tns:DeviceSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DeviceSettings" nillable="true" type="tns:DeviceSettings" />
+  <xs:complexType name="DeviceSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AssetSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DeviceId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Name" type="tns:VehicleSettingName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeviceSetting" nillable="true" type="tns:DeviceSetting" />
+  <xs:complexType name="AssetSetting">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CID" type="xs:int">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="DT" type="q1:DateTimeOffset">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes.DeliveryStatus" minOccurs="0" name="DeliveryStatuses" nillable="true" type="q2:ArrayOfDeliveryStatus">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Id" nillable="true" type="xs:long">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsCurrent" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="IsOverride" type="xs:boolean">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+      <xs:element minOccurs="0" name="Value" nillable="true" type="xs:anyType">
+        <xs:annotation>
+          <xs:appinfo>
+            <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+          </xs:appinfo>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="AssetSetting" nillable="true" type="tns:AssetSetting" />
+  <xs:simpleType name="VehicleSettingName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="VIN" />
+      <xs:enumeration value="VRN" />
+      <xs:enumeration value="FirmwareVersion" />
+      <xs:enumeration value="TachoProtocol" />
+      <xs:enumeration value="TachoBaudrate" />
+      <xs:enumeration value="TachoOptionEnable10KPullUp" />
+      <xs:enumeration value="TachoOptionEnable47KPullUp" />
+      <xs:enumeration value="TachoOptionDisablePullUp" />
+      <xs:enumeration value="TachoOptionSpare" />
+      <xs:enumeration value="CANFMSBaudrate" />
+      <xs:enumeration value="CANTachoBaudrate" />
+      <xs:enumeration value="SpeedInputSource" />
+      <xs:enumeration value="PTOInputSource" />
+      <xs:enumeration value="MainActivityInputSource" />
+      <xs:enumeration value="RPMInputSource" />
+      <xs:enumeration value="EngineTimeInputSource" />
+      <xs:enumeration value="OdometerInputSource" />
+      <xs:enumeration value="DriverIdInputSource" />
+      <xs:enumeration value="PedalInputSource" />
+      <xs:enumeration value="FuelTotalUsageInputSource" />
+      <xs:enumeration value="FuelLevelInputSource" />
+      <xs:enumeration value="Digin1" />
+      <xs:enumeration value="Digin2" />
+      <xs:enumeration value="KFactor" />
+      <xs:enumeration value="WFactor" />
+      <xs:enumeration value="RPMLowDriving" />
+      <xs:enumeration value="RPMHighDriving" />
+      <xs:enumeration value="RPMMaxDriving" />
+      <xs:enumeration value="RPMMaxStandingStill" />
+      <xs:enumeration value="FuelTankSize1" />
+      <xs:enumeration value="FuelTankSize2" />
+      <xs:enumeration value="FuelOffset" />
+      <xs:enumeration value="RTDSSource" />
+      <xs:enumeration value="SwitchDelay" />
+      <xs:enumeration value="MaxSpeed" />
+      <xs:enumeration value="SpeedingThrottle" />
+      <xs:enumeration value="StartTripDetection" />
+      <xs:enumeration value="StartTripDistance" />
+      <xs:enumeration value="StartTripSpeed" />
+      <xs:enumeration value="EndTripStandstill" />
+      <xs:enumeration value="SendIdleTotalOnStartTrip" />
+      <xs:enumeration value="SendAxleWeightOnEndTrip" />
+      <xs:enumeration value="SendFuelLevelOnEndTrip" />
+      <xs:enumeration value="SendFuelTotalOnEndTrip" />
+      <xs:enumeration value="TripRequestSpare" />
+      <xs:enumeration value="MinTimeSpeedingForDriving" />
+      <xs:enumeration value="MinSpeedForDriving" />
+      <xs:enumeration value="MinPTOForRPMIdle" />
+      <xs:enumeration value="MinTimeIdlingForRPMIdle" />
+      <xs:enumeration value="FillDiffToGenFuelEvent" />
+      <xs:enumeration value="DrainDiffToGenFuelEvent" />
+      <xs:enumeration value="FuelTankingDelay" />
+      <xs:enumeration value="TimeToGenFuelEvent" />
+      <xs:enumeration value="TimeWithIgnOnToGenPosEvent" />
+      <xs:enumeration value="LogLevelToSave" />
+      <xs:enumeration value="LogLevelToSend" />
+      <xs:enumeration value="MaxLogRecords" />
+      <xs:enumeration value="EnableMMIOnPowerOff" />
+      <xs:enumeration value="HWOptionsSpare" />
+      <xs:enumeration value="AddSubmitTime" />
+      <xs:enumeration value="UseDiffMaxPos" />
+      <xs:enumeration value="FuncOptionsSpare" />
+      <xs:enumeration value="SpeedToDisableUIInput" />
+      <xs:enumeration value="TimeToSleepOnIgnOff" />
+      <xs:enumeration value="MaxTrailers" />
+      <xs:enumeration value="MaxTrailersCheckIgn" />
+      <xs:enumeration value="MaxTrailersSpare" />
+      <xs:enumeration value="TimeoutForSingleTrailer" />
+      <xs:enumeration value="TimeoutForMutliTrailer" />
+      <xs:enumeration value="KPI_OptionsSpare" />
+      <xs:enumeration value="KPI_TimeShortIdling" />
+      <xs:enumeration value="KPI_TimeLongIdling" />
+      <xs:enumeration value="KPI_MaxGasPedalPosForCoasting" />
+      <xs:enumeration value="KPI_MinGasPedalPosForMaxPRM" />
+      <xs:enumeration value="KPI_MinGasPedalPosForMaxSpeed" />
+      <xs:enumeration value="KPI_MinSpeedForHarshBreak" />
+      <xs:enumeration value="KPI_MinTimeForHarshBreak" />
+      <xs:enumeration value="SFSP_EnableMassEvent" />
+      <xs:enumeration value="SFSP_EnableCollisionEvent" />
+      <xs:enumeration value="SFSP_EnableFuelLevelEvent" />
+      <xs:enumeration value="SFSP_EnableExcessiveIdling" />
+      <xs:enumeration value="SFSP_EnableExcessivePTO" />
+      <xs:enumeration value="SFSP_EnableExtendedFillEvent" />
+      <xs:enumeration value="SFSP_OptionsSpare" />
+      <xs:enumeration value="SFSP_GearRatioDiff" />
+      <xs:enumeration value="SFSP_WheelCircle" />
+      <xs:enumeration value="SFSP_HarshAccLow" />
+      <xs:enumeration value="SFSP_HarshAccHigh" />
+      <xs:enumeration value="SFSP_HarshDecLow" />
+      <xs:enumeration value="SFSP_HarshDecHigh" />
+      <xs:enumeration value="SFSP_HarshDecSpeed" />
+      <xs:enumeration value="SFSP_HarshDecTime" />
+      <xs:enumeration value="SFSP_HarshThrottle" />
+      <xs:enumeration value="SFSP_ColdDriving" />
+      <xs:enumeration value="SFSP_UrbanSpeed" />
+      <xs:enumeration value="SFSP_UrbanBrakeTime" />
+      <xs:enumeration value="SFSP_UrbanDriveTime" />
+      <xs:enumeration value="SFSP_RoadGradient" />
+      <xs:enumeration value="SFSP_RoadGradDist" />
+      <xs:enumeration value="SFSP_BrakeTime" />
+      <xs:enumeration value="SFSP_MassThrottle" />
+      <xs:enumeration value="SFSP_MassAccLow" />
+      <xs:enumeration value="SFSP_MassAccHigh" />
+      <xs:enumeration value="SFSP_CollisionSpeed" />
+      <xs:enumeration value="SFSP_FuelDropLevel" />
+      <xs:enumeration value="SFSP_IdlingAlert" />
+      <xs:enumeration value="SFSP_PTOAlert" />
+      <xs:enumeration value="SFSP_ExtendedFill" />
+      <xs:enumeration value="SFSP_HarshBrakeSpeed" />
+      <xs:enumeration value="SFSP_HarshBrakeTime" />
+      <xs:enumeration value="SFSP_CoastingThrottle" />
+      <xs:enumeration value="SFSP_OverRevThrottle" />
+      <xs:enumeration value="DSE_UseRealTimeEvents" />
+      <xs:enumeration value="DSE_UseArchive" />
+      <xs:enumeration value="DSE_OptionsSpare" />
+      <xs:enumeration value="SiteAdvice_OptionsSpare" />
+      <xs:enumeration value="SiteAdvice_SRequestLow" />
+      <xs:enumeration value="SiteAdvice_SRequestTime" />
+      <xs:enumeration value="SiteAdvice_SRequestDist" />
+      <xs:enumeration value="FreqPos_OptionsSpare" />
+      <xs:enumeration value="FreqPos_MinDistanceRoute" />
+      <xs:enumeration value="FreqPos_MinDeviationRoute" />
+      <xs:enumeration value="Landmark_ShowCheckPoints" />
+      <xs:enumeration value="Landmark_ShowNoEntryZones" />
+      <xs:enumeration value="Landmark_AddETA" />
+      <xs:enumeration value="Landmark_OptionsSpare" />
+      <xs:enumeration value="Landmark_MinDistanceBeforeNewPos" />
+      <xs:enumeration value="Landmark_MultiplyFactor" />
+      <xs:enumeration value="RTDS_OptionsSpare" />
+      <xs:enumeration value="RTDS_CANSource" />
+      <xs:enumeration value="TextMSG_SendPowerON" />
+      <xs:enumeration value="TextMSG_SendFuelEvents" />
+      <xs:enumeration value="TextMSG_SendMaxSpeed" />
+      <xs:enumeration value="TextMSG_SendOnTRACSEvents" />
+      <xs:enumeration value="TextMSG_OptionsSpare" />
+      <xs:enumeration value="WF_OptionsSpare" />
+      <xs:enumeration value="WF_TimeToDelete" />
+      <xs:enumeration value="Service_AlertsAndPanic" />
+      <xs:enumeration value="Service_DriverCoach" />
+      <xs:enumeration value="Service_DriverHours" />
+      <xs:enumeration value="Service_DriverCards" />
+      <xs:enumeration value="Service_FrequentPositioning" />
+      <xs:enumeration value="Service_KPI2" />
+      <xs:enumeration value="Service_Landmarks" />
+      <xs:enumeration value="Service_RTDS" />
+      <xs:enumeration value="Service_TextMessaging" />
+      <xs:enumeration value="Service_Trailers" />
+      <xs:enumeration value="Service_Workflow" />
+      <xs:enumeration value="Service_Navigation" />
+      <xs:enumeration value="DriverCoach_OptionsSpare" />
+      <xs:enumeration value="DriverCoach_UnEcoAccTime" />
+      <xs:enumeration value="DriverCoach_UnEcoAcc" />
+      <xs:enumeration value="DriverCoach_UnEcoThrottle" />
+      <xs:enumeration value="DriverCoach_UnEcoBrakeTime" />
+      <xs:enumeration value="DriverCoach_OverRevThrottle" />
+      <xs:enumeration value="DriverCoach_HarshAccThreshold" />
+      <xs:enumeration value="DriverCoach_HarshAccThrottle" />
+      <xs:enumeration value="DriverCoach_HarshAccTime" />
+      <xs:enumeration value="DriverCoach_HarshAccRPM" />
+      <xs:enumeration value="DriverCoach_HarshBrakingLimit" />
+      <xs:enumeration value="DriverCoach_HarshBrakingTime" />
+      <xs:enumeration value="DriverCoach_CoastingThrottle" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="VehicleSettingName" nillable="true" type="tns:VehicleSettingName" />
+  <xs:complexType name="VehicleSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="VehicleSetting" nillable="true" type="tns:VehicleSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="VehicleSettings" nillable="true" type="tns:VehicleSettings" />
+  <xs:complexType name="VehicleSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AssetSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" type="tns:VehicleSettingName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="VehicleId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="VehicleSetting" nillable="true" type="tns:VehicleSetting" />
+  <xs:complexType name="TrailerSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TrailerSetting" nillable="true" type="tns:TrailerSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="TrailerSettings" nillable="true" type="tns:TrailerSettings" />
+  <xs:complexType name="TrailerSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AssetSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Name" type="tns:TrailerSettingName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="TrailerId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="TrailerSetting" nillable="true" type="tns:TrailerSetting" />
+  <xs:simpleType name="TrailerSettingName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="TrailerId" />
+      <xs:enumeration value="IntervalBetweenOTA" />
+      <xs:enumeration value="TimeForMMIGrayout" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="TrailerSettingName" nillable="true" type="tns:TrailerSettingName" />
+  <xs:complexType name="DriverSettings">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="DriverSetting" nillable="true" type="tns:DriverSetting" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="DriverSettings" nillable="true" type="tns:DriverSettings" />
+  <xs:complexType name="DriverSetting">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:AssetSetting">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="DriverId" type="xs:int">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+          <xs:element minOccurs="0" name="Name" type="tns:DriverSettingName">
+            <xs:annotation>
+              <xs:appinfo>
+                <DefaultValue EmitDefaultValue="false" xmlns="http://schemas.microsoft.com/2003/10/Serialization/" />
+              </xs:appinfo>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DriverSetting" nillable="true" type="tns:DriverSetting" />
+  <xs:simpleType name="DriverSettingName">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="UNKNOWN" />
+      <xs:enumeration value="DriverCoach_OptionsSpare" />
+      <xs:enumeration value="DriverCoach_OverSpeedRed" />
+      <xs:enumeration value="DriverCoach_OverSpeedGreen" />
+      <xs:enumeration value="DriverCoach_OverSpeedWeight" />
+      <xs:enumeration value="DriverCoach_OverSpeedWeightDistOrTime" />
+      <xs:enumeration value="DriverCoach_OverSpeedCountRed" />
+      <xs:enumeration value="DriverCoach_OverSpeedCountGreen" />
+      <xs:enumeration value="DriverCoach_OverSpeedCountWeight" />
+      <xs:enumeration value="DriverCoach_OverSpeedCountWeightDistOrTime" />
+      <xs:enumeration value="DriverCoach_UnEcoRed" />
+      <xs:enumeration value="DriverCoach_UnEcoGreen" />
+      <xs:enumeration value="DriverCoach_UnEcoWeight" />
+      <xs:enumeration value="DriverCoach_UnEcoDistOrTime" />
+      <xs:enumeration value="DriverCoach_OverRevRed" />
+      <xs:enumeration value="DriverCoach_OverRevGreen" />
+      <xs:enumeration value="DriverCoach_OverRevWeight" />
+      <xs:enumeration value="DriverCoach_OverRevDistOrTime" />
+      <xs:enumeration value="DriverCoach_HarshAccRed" />
+      <xs:enumeration value="DriverCoach_HarshAccGreen" />
+      <xs:enumeration value="DriverCoach_HarshAccWeight" />
+      <xs:enumeration value="DriverCoach_HarshAccDistOrTime" />
+      <xs:enumeration value="DriverCoach_HarshBrakingRed" />
+      <xs:enumeration value="DriverCoach_HarshBrakingGreen" />
+      <xs:enumeration value="DriverCoach_HarshBrakingWeight" />
+      <xs:enumeration value="DriverCoach_HarshBrakingDistOrTime" />
+      <xs:enumeration value="DriverCoach_CruiseControlRed" />
+      <xs:enumeration value="DriverCoach_CruiseControlGreen" />
+      <xs:enumeration value="DriverCoach_CruiseControlWeight" />
+      <xs:enumeration value="DriverCoach_CruiseControlDistOrTime" />
+      <xs:enumeration value="DriverCoach_CoastingRed" />
+      <xs:enumeration value="DriverCoach_CoastingGreen" />
+      <xs:enumeration value="DriverCoach_CoastingWeight" />
+      <xs:enumeration value="DriverCoach_CoastingDistOrTime" />
+      <xs:enumeration value="DriverCoach_EcoRPMRed" />
+      <xs:enumeration value="DriverCoach_EcoRPMGreen" />
+      <xs:enumeration value="DriverCoach_EcoRPMWeight" />
+      <xs:enumeration value="DriverCoach_EcoRPMDistOrTime" />
+      <xs:enumeration value="DriverCoach_ShortIdlingRed" />
+      <xs:enumeration value="DriverCoach_ShortIdlingGreen" />
+      <xs:enumeration value="DriverCoach_ShortIdlingWeight" />
+      <xs:enumeration value="DriverCoach_LongIdlingRed" />
+      <xs:enumeration value="DriverCoach_LongIdlingGreen" />
+      <xs:enumeration value="DriverCoach_LongIdlingWeight" />
+      <xs:enumeration value="DriverCoach_LongIdlingCountRed" />
+      <xs:enumeration value="DriverCoach_LongIdlingCountGreen" />
+      <xs:enumeration value="DriverCoach_LongIdlingCountWeight" />
+      <xs:enumeration value="DriverCoach_PTOIdlingCountRed" />
+      <xs:enumeration value="DriverCoach_PTOIdlingCountGreen" />
+      <xs:enumeration value="DriverCoach_PTOIdlingCountWeight" />
+      <xs:enumeration value="DriverHour_DefDriverMainActivity" />
+      <xs:enumeration value="DriverHour_DefDriverDetailedActivity" />
+      <xs:enumeration value="DriverHour_DefCoDriverMainActivity" />
+      <xs:enumeration value="DriverHour_DefCoDriverDetailedActivity" />
+      <xs:enumeration value="DriverHour_MaxWorkTime" />
+      <xs:enumeration value="DriverHour_MaxNoActivity" />
+      <xs:enumeration value="DriverHour_DecoupleActivities" />
+      <xs:enumeration value="DriverHour_UseTacho1MinRule" />
+      <xs:enumeration value="DriverHour_ShowLoginWarning" />
+      <xs:enumeration value="DriverHour_CountOnlyREST" />
+      <xs:enumeration value="DriverHour_OptionsSpare" />
+      <xs:enumeration value="DriverHour_SubUnknown" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="DriverSettingName" nillable="true" type="tns:DriverSettingName" />
+</xs:schema>

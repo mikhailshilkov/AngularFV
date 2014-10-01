@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="QESE.QFV.Services" elementFormDefault="qualified" targetNamespace="QESE.QFV.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd10" namespace="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd9" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd11" namespace="http://schemas.datacontract.org/2004/07/QESE.Logging" />
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/System" />
+  <xs:element name="GetCustomer">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetCustomerResult" nillable="true" type="q1:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCID">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="customerName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetCIDResult" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryDetails">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCountryDetailsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetCountryDetailsResult" nillable="true" type="q2:ArrayOfCountry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomers">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetCustomersResult" nillable="true" type="q3:Customers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCareCustomers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerCareCustomersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetCustomerCareCustomersResult" nillable="true" type="q4:ArrayOfCustomer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetCustomerDevicesResult" nillable="true" type="q5:ArrayOfDeviceSummary" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicles">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q6:GetVehiclesRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehiclesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetVehiclesResult" nillable="true" type="q7:Vehicles" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q8:DeviceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetDevicesResult" nillable="true" type="q9:Devices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIDs">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="MSISDN" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCIDsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q10="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="GetCIDsResult" nillable="true" type="q10:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDevice">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q11="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q11:DeviceRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDeviceResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q12="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetDeviceResult" nillable="true" type="q12:Device" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleIdByMSISDN">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="msisdn" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetVehicleIdByMSISDNResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetVehicleIdByMSISDNResult" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerPreferences">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q13="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="preferences" nillable="true" type="q13:CustomerPreferences" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerPreferencesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q14="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="SaveCustomerPreferencesResult" nillable="true" type="q14:CustomerPreferences" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerServices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q15="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="services" nillable="true" type="q15:CustomerServices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveCustomerServicesResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="AssetSelection" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q16="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetAssetsResult" nillable="true" type="q16:Assets" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userFilter" nillable="true" type="xs:string" />
+        <xs:element xmlns:q17="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="filter" nillable="true" type="q17:AssetFilter" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAssetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q18="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="FindAssetsResult" nillable="true" type="q18:Positions" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveAssetGroup">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="groupId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveAssetGroupResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q19="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="RetrieveAssetGroupResult" nillable="true" type="q19:AssetGroupContent" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUserAssetGroups">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveUserAssetGroupsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q20="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="RetrieveUserAssetGroupsResult" nillable="true" type="q20:AssetGroups" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadParameterSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q21="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="parameterSet" nillable="true" type="q21:ParameterSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UploadParameterSetResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListParameterSets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="terminalType" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ListParameterSetsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q22="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="ListParameterSetsResult" nillable="true" type="q22:ArrayOfParameterSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveParameterSet">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="parameterSetId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveParameterSetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q23="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="RetrieveParameterSetResult" nillable="true" type="q23:ParameterSet" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveParameterSetInstances">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="terminalTypeId" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="showDraft" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="showSent" nillable="true" type="xs:boolean" />
+        <xs:element minOccurs="0" name="id" nillable="true" type="xs:int" />
+        <xs:element minOccurs="0" name="parameterSetId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RetrieveParameterSetInstancesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q24="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="RetrieveParameterSetInstancesResult" nillable="true" type="q24:ArrayOfParameterSetInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveParameterSetInstance">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q25="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="setInstance" nillable="true" type="q25:ParameterSetInstance" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveParameterSetInstanceResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepots">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetDepotsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q26="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetDepotsResult" nillable="true" type="q26:Depots" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadFilters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q27="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="appID" nillable="true" type="q27:AppId" />
+        <xs:element minOccurs="0" name="filterClass" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadFiltersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="LoadFiltersResult" nillable="true">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any minOccurs="0" processContents="lax" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q28="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="appId" type="q28:AppId" />
+        <xs:element minOccurs="0" name="filterID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="description" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="definition" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="filterClass" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveFilterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="SaveFilterResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFilter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q29="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="appId" type="q29:AppId" />
+        <xs:element minOccurs="0" name="filterID" type="xs:int" />
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="DeleteFilterResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserDrivers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserDriversResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q30="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetUserDriversResult" nillable="true" type="q30:Drivers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserTrailers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserTrailersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q31="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetUserTrailersResult" nillable="true" type="q31:Trailers" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserTrailerDevices">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userFilter" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserTrailerDevicesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q32="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetUserTrailerDevicesResult" nillable="true" type="q32:TrailerDevices" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmail">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q33="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q33:SendEmailRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendEmailResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q34="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="SendEmailResult" nillable="true" type="q34:SendEmailResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMS">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q35="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q35:SendSMSRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SendSMSResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q36="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="SendSMSResult" nillable="true" type="q36:SendSMSResponse" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetsWithAssignments">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element minOccurs="0" name="userFilter" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="shipperId" nillable="true" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAssetsWithAssignmentsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q37="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetAssetsWithAssignmentsResult" nillable="true" type="q37:AssetsWithAssignments" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserActivityInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q38="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q38:UserActivityInsertRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UserActivityInsertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserActivities">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q39="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q39:UserActivityRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetUserActivitiesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetUserActivitiesResult" nillable="true" type="q40:UserActivities" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TPIActivityInsert">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q41="http://schemas.datacontract.org/2004/07/QESE.QFV.Services" minOccurs="0" name="request" nillable="true" type="q41:TPIActivityInsertRequest" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="TPIActivityInsertResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveIdentifiers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q42="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="identifiers" nillable="true" type="q42:ArrayOfAssetIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveIdentifiersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q43="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="ResolveIdentifiersResult" nillable="true" type="q43:ArrayOfAssetIdentifier" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveIdentifier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q44="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="category" type="q44:AssetCategory" />
+        <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:string" />
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="identifierType" type="q45:IdentifierType" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="resultIdentifierType" type="q46:IdentifierType" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ResolveIdentifierResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ResolveIdentifierResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExternalIdentifier">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q47="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="category" type="q47:AssetCategory" />
+        <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:string" />
+        <xs:element xmlns:q48="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="identifierType" type="q48:IdentifierType" />
+        <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="externalIdentifier" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="updateIfExists" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddExternalIdentifierResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAssetOwners">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q49="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="assetCategory" type="q49:AssetCategory" />
+        <xs:element xmlns:q50="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="identifierType" type="q50:IdentifierType" />
+        <xs:element minOccurs="0" name="identifier" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="FindAssetOwnersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q51="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="FindAssetOwnersResult" nillable="true" type="q51:ArrayOfint" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnsureAssets">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="userName" nillable="true" type="xs:string" />
+        <xs:element xmlns:q52="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="assets" nillable="true" type="q52:ArrayOfAsset" />
+        <xs:element minOccurs="0" name="autoCreate" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EnsureAssetsResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProfilingSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q53="http://schemas.datacontract.org/2004/07/QESE.Logging" minOccurs="0" name="profiler" nillable="true" type="q53:Profiler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="SaveProfilingSessionResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadProfilingSession">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q54="http://schemas.datacontract.org/2004/07/QESE.Logging" minOccurs="0" name="profiler" nillable="true" type="q54:Profiler" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LoadProfilingSessionResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q55="http://schemas.datacontract.org/2004/07/QESE.Logging" minOccurs="0" name="LoadProfilingSessionResult" nillable="true" type="q55:Step" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLogHasUpdates">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q56="http://schemas.datacontract.org/2004/07/System" minOccurs="0" name="sinceDate" type="q56:DateTimeOffset" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeLogHasUpdatesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ChangeLogHasUpdatesResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangeLog">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="CID" type="xs:int" />
+        <xs:element xmlns:q57="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="objectType" type="q57:ChangeLogObjectType" />
+        <xs:element minOccurs="0" name="objectId" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetChangeLogResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q58="http://schemas.datacontract.org/2004/07/QESE.QFV.Classes" minOccurs="0" name="GetChangeLogResult" nillable="true" type="q58:ChangeLogEntries" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

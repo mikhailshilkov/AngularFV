@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:tns="http://schemas.datacontract.org/2004/07/QESE.Logging" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/QESE.Logging" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost/wsFCCommon/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="Profiler">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="AutoSave" type="xs:boolean" />
+      <xs:element minOccurs="0" name="CID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="CurrentStepId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Finished" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsExternal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsLocal" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Root" nillable="true" type="tns:Step" />
+      <xs:element minOccurs="0" name="Started" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="StepsCount" type="xs:int" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Profiler" nillable="true" type="tns:Profiler" />
+  <xs:complexType name="Step">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Application" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="CID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="Finished" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="Index" type="xs:int" />
+      <xs:element minOccurs="0" name="InternalDuration" type="ser:duration" />
+      <xs:element minOccurs="0" name="IsLast" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Level" type="xs:int" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="ParentId" type="ser:guid" />
+      <xs:element minOccurs="0" name="ProfilerId" type="ser:guid" />
+      <xs:element minOccurs="0" name="Started" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Steps" nillable="true" type="tns:ArrayOfStep" />
+      <xs:element minOccurs="0" name="UserName" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Step" nillable="true" type="tns:Step" />
+  <xs:complexType name="ArrayOfStep">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Step" nillable="true" type="tns:Step" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfStep" nillable="true" type="tns:ArrayOfStep" />
+</xs:schema>

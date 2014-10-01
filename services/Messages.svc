@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="AngularFV.services.Messages" CodeBehind="Messages.svc.cs" %>

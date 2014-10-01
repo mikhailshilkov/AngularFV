@@ -1,0 +1,318 @@
+body {
+  background-color: #EEEEEE;
+  font-family: arial, sans-serif;
+  font-size: 13px;
+  margin: 0px;
+  padding: 0px;
+}
+
+table {
+  border:0px;
+  border-collapse:collapse; 
+}
+
+table td {
+  padding:0px; 
+}
+
+input, .input {
+  color: #222;
+  border: 0;
+  outline: none;
+}
+
+div {
+  outline: none;
+}
+
+h3 {
+  width: 200px;
+}
+
+
+.bold {
+  font-weight: bold;
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.search {
+  background-color: white;
+  height: 30px;
+  width: 500px;
+  border: 1px solid #cdcdcd;
+}
+
+.search input {
+  border: 0;
+  margin: 4px 7px;
+  width: 490px;
+}
+
+.searchbutton {
+  border: none;
+  height: 30px;
+  outline: none;
+  padding: 0 0;
+  width: 60px;
+  background: #4285f4;
+  cursor: pointer;
+}
+
+.searchbutton div {
+  background-image: url('https://ssl.gstatic.com/gb/images/v1_53a1fa6a.png');
+  background-size: 536px 341px;
+  background-position: -466px -207px;
+  height: 30px;
+  width: 30px;
+  margin-left: 15px;
+}
+
+.button {
+  cursor: pointer;
+  height: 27px;
+  border-radius: 2px;
+  line-height: 27px;
+  padding: 0 8px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.sidebar {
+  float: left;
+  width: 200px;
+}
+
+.sidebar .button {
+  width: 97px;
+  margin-left: 14px;
+  margin-bottom: 10px;
+  background-color: #d14836;
+  background-image: -webkit-linear-gradient(top,#dd4b39,#d14836);
+}
+
+.sidebar .folder {
+  cursor: pointer;
+  height: 18px;
+  padding-left: 29px;
+}
+
+.sidebar .selected {
+  color: #DD4B39;
+  font-weight: bold;
+}
+
+.gridbody {
+  margin-left:200px;
+  margin-right: 10px;
+}
+
+.grid {
+  height: 650px;
+  overflow-y: scroll;
+}
+
+.new {
+  background: white;
+  margin-bottom: 20px;
+}
+
+.new .recepient {
+  border: 1px solid #CFCFCF;
+  padding: 12px 1px 12px 15px;
+  color: #777;
+  font-size: 13px;
+}
+
+.new .recepient .input {
+  margin-left: 10px;
+  width: 500px;
+}
+
+.new .body {
+  border-left: 1px solid #CFCFCF;
+  border-right: 1px solid #CFCFCF;
+  padding: 10px;
+}
+
+.new .body .input {
+  border: 0;
+  min-height: 85px;
+}
+
+.new .buttons {
+  border: 1px solid #CFCFCF;
+  background-color: #F5F5F5;
+  padding: 5px;
+}
+
+.new .buttons .blue {
+  width: 72px;
+  background-color: #4d90fe;
+  background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
+  background-image: linear-gradient(top,#4d90fe,#4787ed);
+  border: 1px solid #3079ed;
+}
+
+.new .buttons .gray {
+  width: 72px;
+  background-color: #C1C1C1;
+  border: 1px solid #AAA;
+  margin-left: 5px;
+}
+
+.messages {
+  border: 1px solid #aaa;
+  cursor: pointer;
+  background-color: #E5E5E5;
+}
+
+.messages td {
+  border-bottom: 1px #aaa solid;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+.messages .unread {
+  font-weight: bold;
+}
+
+.messages .selected {
+  background-color: #FFFFCC;
+}
+
+.messages .who {
+  width: 270px;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+.messages .text {
+  width: 900px;
+}
+
+.messages .date {
+  width: 210px;
+  padding-left: 10px;
+  padding-right: 6px;
+}
+
+.messages .where {
+  width: 250px;
+  padding-left: 8px;
+  padding-right: 20px;
+}
+
+.preview {
+  height: 200px;
+  background-color: #E1E1E1;
+  border: 1px solid #aaa;
+  margin: 5px 0px 5px 0px;
+}
+
+.preview .header {
+  font-size: larger;
+  font-weight: bold;
+  background-color: white;
+  padding: 7px 7px;
+  color: #DD4B39;
+}
+
+.preview .body {
+  margin: 10px;
+}
+
+.preview .body td {
+  vertical-align: top;
+  padding-bottom: 4px;
+}
+
+.preview .body .text {
+  font-weight: bold;
+  background: white;
+  padding: 5px;
+  min-width: 300px;
+  min-height: 100px;
+  border: 1px solid #AAA;
+}
+
+
+div[data-angular-treeview] {
+  /* prevent user selection */
+  -moz-user-select: -moz-none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+
+  /* default */
+  text-decoration: none;
+}
+
+div[data-tree-model] ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; 
+  border: none;
+  overflow: hidden;
+}
+
+div[data-tree-model] li {
+  position: relative;
+  padding: 0 0 0 10px;
+  line-height: 20px;
+}
+
+div[data-tree-model] li .expanded {
+  padding: 1px 10px;
+  background: url("https://ssl.gstatic.com/ui/v1/zippy/arrow_down.png") no-repeat 8px 5px;;
+}
+
+div[data-tree-model] li .collapsed {
+  padding: 1px 10px;
+  background: url("https://ssl.gstatic.com/ui/v1/zippy/arrow_right.png") no-repeat 8px 5px;
+}
+
+div[data-tree-model] li .normal {
+  padding: 1px 10px;
+  /*background-image: url("http://cfile23.uf.tistory.com/image/165B663A50C13F4B196CCA");*/
+}
+
+div[data-tree-model] li i, div[data-tree-model] li span {
+  cursor: pointer;
+}
+
+div[data-tree-model] li .selected {
+  background-color: white;
+  font-weight: bold;
+  padding: 1px 5px;
+}
